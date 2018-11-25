@@ -1,0 +1,33 @@
+DROP DATABASE IF EXISTS HireMe;
+CREATE DATABASE HireMe;
+USE HireMe;
+
+CREATE TABLE Users (
+ id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ firstname VARCHAR(32) DEFAULT NULL,
+ lastname VARCHAR(32) DEFAULT NULL,
+ password VARCHAR(255) DEFAULT NULL,
+ telephone VARCHAR(16) DEFAULT NULL,
+ email VARCHAR(32) DEFAULT NULL,
+ date_joined VARCHAR(32) DEFAULT NULL
+);
+
+INSERT INTO Users(id, firstname, lastname, username, password, telephone, email, date_joined) 
+          VALUES (1, 'Zephyr', 'Cornelius', 'admin', MD5('password123'),'876-372-5829','admin@hireme.com','25/11/2018');
+
+CREATE TABLE Jobs (
+ id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ job_title VARCHAR(32) DEFAULT NULL,
+ job_description VARCHAR(32) DEFAULT NULL,
+ category VARCHAR(16) DEFAULT NULL,
+ company_name VARCHAR(16) DEFAULT NULL,
+ company_location VARCHAR(32) DEFAULT NULL,
+ date_posted VARCHAR(32) DEFAULT NULL
+);
+
+CREATE TABLE Jobs_Applied_For (
+ id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ job_id VARCHAR(16) DEFAULT NULL,
+ user_id VARCHAR(16) DEFAULT NULL,
+ date_applied VARCHAR(32) DEFAULT NULL
+);
