@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS HireMe;
-CREATE DATABASE HireMe;
-USE HireMe;
+DROP DATABASE IF EXISTS HireMeDB;
+CREATE DATABASE HireMeDB;
+USE HireMeDB;
 
 CREATE TABLE Users (
  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -12,8 +12,8 @@ CREATE TABLE Users (
  date_joined VARCHAR(32) DEFAULT NULL
 );
 
-INSERT INTO Users(id, firstname, lastname, username, password, telephone, email, date_joined) 
-          VALUES (1, 'Zephyr', 'Cornelius', 'admin', MD5('password123'),'876-372-5829','admin@hireme.com','25/11/2018');
+INSERT INTO Users(id, firstname, lastname, password, telephone, email, date_joined) 
+          VALUES (1, 'Zephyr', 'Cornelius', MD5('password123'),'876-372-5829','admin@hireme.com','25/11/2018');
 
 CREATE TABLE Jobs (
  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
