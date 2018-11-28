@@ -1,0 +1,84 @@
+.grid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 9px;
+  background-color: #d6d8db;
+  padding: 10px;
+}
+
+.grid>div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 40px;
+  font-size: 15px;
+
+}
+
+.grid > div > label {
+    display: inline-block;
+    width: 140px;
+    padding-right: 20px; 
+    text-align: left;
+}
+
+.grid > div > input {
+    width: 240px;
+    padding-right: 20px; 
+}
+
+
+#submit {
+    position: relative;
+    left: 320px;
+    top: -5px;
+    background-color: #69C5E4;
+    color: white;
+    padding: 12px 28px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: courier;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#hire {
+  font-family: courier;
+  text-transform: uppercase;
+  background-color: grey;
+  grid-area: 1 / 1 / span 1 / span 3;
+  color: white;
+}
+
+#menu-area {
+  background-color: white;
+  grid-area: 2 / 1 / span 7 / span 1;
+}
+
+#new {
+  font-family: courier;
+  background-color: white;
+  grid-area: 2 / 2 / span 1 / span 2;
+  font-size: 30px;
+  /*font-weight: bold;*/
+}
+
+.fname {
+  grid-area: 3 / 2 / span 1 / span 2;
+}
+
+
+.lname {
+  grid-area: 4 / 2 / span 1 / span 2;
+}
+
+.password {
+  grid-area: 5 / 2 / span 1 / span 2;
+}
+
+.email {
+  grid-area: 6 / 2 / span 1 / span 2;
+}
+
+.tele {
+  grid-area: 7 / 2 / span 1 / span 2;
+}

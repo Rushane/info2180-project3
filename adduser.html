@@ -1,0 +1,67 @@
+<?php 
+session_start();
+$userinfo = array();
+$userinfo['email'] = $email;
+$userinfo['password'] = $pword;
+$_SESSION['userinfo'] = $userinfo;
+
+session_destroy();
+header('location:login.html');
+?>
+
+<!DOCTYPE html>
+    <html>
+        <title>Hire Me Form</title>
+        <head> 
+            <link rel='stylesheet' type='text/css' href='styles/style.css'> 
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        </head>
+  
+        <body>
+            
+            <div class="grid">
+                <div id ="hire"><h1>Hire Me</h1></div>
+
+                <div id="menu-area">
+                    <div class="w3-container">
+                        <ul class="w3-ul">
+                            <li><i class="fa fa-home"></i>Home </li>
+                            <li><i class="fa fa-user-plus"></i>Add User</li><li><i class="material-icons">domain</i>New Job</li>
+                            <li><span class="glyphicon glyphicon-log-out"></span>Logout</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="new">New User</div>
+                
+              <form name="newuserform" action="adduser.php" method="post">
+                <div class="fname"> 
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" id="fname" /><br /> 
+                </div>
+
+                <div class="lname"> 
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lname" id="lname" /><br />
+                </div>
+
+                <div class="password"><label for="password">Password</label>
+                    <input type="password" name="password" id="password"/><br/>
+                </div>
+
+                <div class="email"> <label for="lname">Email</label>
+                    <input type="text" name="email" id="email" placeholder="e.g. mary.jane@example.com"/><br />
+                </div>
+
+                <div class="tele"> <label for="lname">Telephone</label>
+                    <input type="text" name="tele" id="tele" placeholder="e.g. 876-999-6969"/><br />  
+                </div>
+
+                <button type="submit" name="submit" id="submit">Submit</button>
+              </form>
+            </div>
+        </body>
+    </html>

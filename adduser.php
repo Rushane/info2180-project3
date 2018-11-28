@@ -16,6 +16,9 @@ catch(PDOException $e){
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $pword = $_SESSION['userinfo']['password'];
+    $email = $_SESSION['userinfo']['email'];
+    
     $fname = name_filter($_POST["firstname"]);
     $lname = name_filter($_POST["lastname"]);
     $pword =  password_filter($_POST["pass_word"]);
