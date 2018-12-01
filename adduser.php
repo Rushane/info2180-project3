@@ -29,9 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //$hash_pword = md5($pword);
     
     // returns true if all of variables are set and returns false if any of the values are null
-    if(isset($fname) && isset($lname) && isset($hash_pword) && ($tphone) && ($email) && ($date_joined)){ 
-        $sql = "INSERT INTO Users(firstname, lastname, password, telephone, email, date_joined) VALUES('$fname', '$lname', '$hash_pword', '$tphone', 
-               '$email', '$date_joined');";
+    if(isset($fname) && isset($lname) && isset($pword) && ($tphone) && ($email) && ($date_joined)){ 
+        $sql = 'INSERT INTO `Users`(firstname, lastname, password, telephone, email, date_joined) VALUES("' . $fname  .'","' .$lname .'","' . $pword .'",
+        "' . $tphone .'","' . $email .'","' . $date_joined .'");'; 
         $conn->exec($sql);
         echo 'User added';
     }
@@ -71,6 +71,7 @@ function date_filter() {
         echo "Invalid date";
         return null;
     }*/
+    return $date;
 }
 
 function phone_filter($name) {
@@ -84,7 +85,7 @@ function phone_filter($name) {
 
 function password_filter($name) {
     $uppercase = preg_match('@[A-Z]@', $name); // Must contain at least one uppercase character
-    $lowercase = preg_match('@[a-z]@', $name);; // Must contain at least one lowercase character
+    $lowercase = preg_match('@[a-z]@', $name); // Must contain at least one lowercase character
     $number    = preg_match('@[0-9]@', $name); // Must contain at least 1 number
 
     if(!$uppercase || !$lowercase || !$number || strlen($name) < 8) {
@@ -94,7 +95,7 @@ function password_filter($name) {
         //return name_filter($name);
         //$hash_pword = md5($pword);
         
-        $hash_pword = password_hash($pword, PASSWORD_BCRYPT);
+        $hash_pword = password_hash($name, PASSWORD_BCRYPT);
         return $hash_pword;
     }
 }
