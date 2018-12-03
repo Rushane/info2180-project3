@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   // returns true if all of variables are set and returns false if any of the values are null
     if(isset($title) && isset($description) && isset($category) && isset($compName) && isset($location)){ 
-        $sql = "INSERT INTO Jobs(job_title, job_description, category, company_name, company_location, date_posted) VALUES('$title', '$description', '$category', '$command', 
+        $sql = "INSERT INTO Jobs(job_title, job_description, category, company_name, company_location, date_posted) VALUES('$title', '$description', '$category', '$compName', 
                '$location', '$date');";
         $conn->exec($sql);
         echo 'Job added';
@@ -40,5 +40,6 @@ function name_filter($name) { // sanitizes string
 function date_filter() {
     date_default_timezone_set('America/Jamaica');
     $date = date('d/m/Y');
+    return $date;
 }
 

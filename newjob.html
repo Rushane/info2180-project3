@@ -1,0 +1,76 @@
+<?php 
+session_start();
+$userinfo = array();
+$userinfo['email'] = $email;
+$userinfo['password'] = $pword;
+$_SESSION['userinfo'] = $userinfo;
+
+session_destroy();
+
+header('location:login.html');
+?>
+
+<!DOCTYPE html>
+    <html>
+        <title>Hire Me Form</title>
+        <head> 
+            <link rel='stylesheet' type='text/css' href='styles/style.css'> 
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        </head>
+  
+        <body>
+            
+            <div class="grid">
+                <div id ="hire"><h1>Hire Me</h1></div>
+
+                <div id="menu-area">
+                    <div class="w3-container">
+                        <ul class="w3-ul">
+                            <li><i class="fa fa-home"></i>Home </li>
+                            <li><i class="fa fa-user-plus"></i>Add User</li><li><i class="material-icons">domain</i>New Job</li>
+                            <li><span class="glyphicon glyphicon-log-out"></span>Logout</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="new">New User</div>
+                
+              <form name="newjobform" action="newjob.php" method="POST">
+                <div class="jtitle"> 
+                    <label for="jobtitle">Job Title</label>
+                    <input type="text" name="title" id="title" /><br /> 
+                </div>
+
+                <div class="jdescription"> 
+                    <label for="description">Job Description</label>
+                    <input type="textarea" name="description" id="description"/> <br/>
+                </div>
+
+                <div class="category">
+                    <label for="category">Category</label>
+                    <input list="category" name="category">
+                      <datalist id="category" name="category">
+                            <option value="Design">
+                            <option value="Programming">
+                            <option value="DevOps & Sysadmin">
+                            <option value="Customer Support">
+                            <option value="Sales & Marketing">
+                      </datalist><br/>
+                </div>
+
+                <div class="companyname"> <label for="companyname">Company Name</label>
+                    <input type="text" name="companyName" id="companyname"/><br />
+                </div>
+
+                <div class="jlocation"> <label for="joblocation">Job Location</label>
+                    <input type="text" name="jobLocation" id="joblocation"/><br />  
+                </div>
+
+                <button type="submit" name="submit" id="submit">Submit</button>
+              </form>
+            </div>
+        </body>
+    </html>

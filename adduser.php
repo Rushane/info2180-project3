@@ -14,6 +14,11 @@ catch(PDOException $e){
   echo $e;
 }
 
+$adminPassword = password_filter('password123');
+$adminPassword = mysql_real_escape_string($adminPassword);
+$adminDate = date_filter();
+$adminDate = mysql_real_escape_string($adminDate);
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pword = $_SESSION['userinfo']['password'];

@@ -1,3 +1,7 @@
+#login{
+  display: block;
+}
+
 .grid{
   display: grid;
   grid-template-columns: auto auto auto;
@@ -62,23 +66,23 @@
   /*font-weight: bold;*/
 }
 
-.fname {
+.fname .jtitle {
   grid-area: 3 / 2 / span 1 / span 2;
 }
 
 
-.lname {
+.lname .jdescription {
   grid-area: 4 / 2 / span 1 / span 2;
 }
 
-.password {
+.password .jcategory {
   grid-area: 5 / 2 / span 1 / span 2;
 }
 
-.email {
+.email .companyname {
   grid-area: 6 / 2 / span 1 / span 2;
 }
 
-.tele {
+.tele .jlocation {
   grid-area: 7 / 2 / span 1 / span 2;
 }

@@ -41,24 +41,24 @@ header('location:login.html');
               <form name="newuserform" action="adduser.php" method="POST">
                 <div class="fname"> 
                     <label for="fname">First Name</label>
-                    <input type="text" name="fname" id="fname" /><br /> 
+                    <input type="text" name="fname" id="fname"  required /><br /> 
                 </div>
 
                 <div class="lname"> 
                     <label for="lname">Last Name</label>
-                    <input type="text" name="lname" id="lname" /><br />
+                    <input type="text" name="lname" id="lname" required /><br />
                 </div>
 
                 <div class="password"><label for="password">Password</label>
-                    <input type="password" name="password" id="password"/><br/>
+                    <input type="password" name="password" id="password" required/><br/>
                 </div>
 
                 <div class="email"> <label for="lname">Email</label>
-                    <input type="text" name="email" id="email" placeholder="e.g. mary.jane@example.com"/><br />
+                    <input type="text" name="email" id="email" placeholder="e.g. mary.jane@example.com" required/><br />
                 </div>
 
                 <div class="tele"> <label for="lname">Telephone</label>
-                    <input type="text" name="tele" id="tele" placeholder="e.g. 876-999-6969"/><br />  
+                    <input type="text" name="tele" id="tele" placeholder="e.g. 876-999-6969" required/><br />  
                 </div>
 
                 <button type="submit" name="submit" id="submit">Submit</button>

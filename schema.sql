@@ -12,13 +12,21 @@ CREATE TABLE Users (
  date_joined VARCHAR(32) DEFAULT NULL
 );
 
+/*INSERT INTO Users(id, firstname, lastname, password, telephone, email, date_joined) 
+          VALUES (1, 'Zephyr', 'Cornelius', MD5('password123'),'876-372-5829','admin@hireme.com','25/11/2018');*/
+          
 INSERT INTO Users(id, firstname, lastname, password, telephone, email, date_joined) 
-          VALUES (1, 'Zephyr', 'Cornelius', MD5('password123'),'876-372-5829','admin@hireme.com','25/11/2018');
+          VALUES (1, 'Zephyr', 'Cornelius', '$adminPassword', '876-372-5829','admin@hireme.com','$adminDate'); 
+
+/*INSERT INTO Users(id, firstname, lastname, password, telephone, email, date_joined) 
+          VALUES (1, 'Zephyr', 'Cornelius', password_hash("password123",PASSWORD_DEFAULT), '876-372-5829','admin@hireme.com','$25/11/2018'); */
+
+            
 
 CREATE TABLE Jobs (
  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
  job_title VARCHAR(32) DEFAULT NULL,
- job_description VARCHAR(32) DEFAULT NULL,
+ job_description VARCHAR(255) DEFAULT NULL,
  category VARCHAR(32) DEFAULT NULL,
  company_name VARCHAR(32) DEFAULT NULL,
  company_location VARCHAR(32) DEFAULT NULL,
