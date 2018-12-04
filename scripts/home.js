@@ -1,3 +1,3 @@
 document.getElementById("Submit").onclick = function () {
-        location.href = "adduser.html";
+        href = "adduser.html";
     };

@@ -12,16 +12,19 @@ CREATE TABLE Users (
  date_joined VARCHAR(32) DEFAULT NULL
 );
 
+/*$adminPassword = password_filter('password123');
+$adminPassword = mysql_real_escape_string($adminPassword);
+$adminDate = date_filter();
+$adminDate = mysql_real_escape_string($adminDate);*/
+
 /*INSERT INTO Users(id, firstname, lastname, password, telephone, email, date_joined) 
-          VALUES (1, 'Zephyr', 'Cornelius', MD5('password123'),'876-372-5829','admin@hireme.com','25/11/2018');*/
+          VALUES (1, 'Zephyr', 'Cornelius', MD5('password123'),'876-372-5829','admin@hireme.com','25/11/2018');
           
 INSERT INTO Users(id, firstname, lastname, password, telephone, email, date_joined) 
-          VALUES (1, 'Zephyr', 'Cornelius', '$adminPassword', '876-372-5829','admin@hireme.com','$adminDate'); 
-
-/*INSERT INTO Users(id, firstname, lastname, password, telephone, email, date_joined) 
           VALUES (1, 'Zephyr', 'Cornelius', password_hash("password123",PASSWORD_DEFAULT), '876-372-5829','admin@hireme.com','$25/11/2018'); */
 
-            
+INSERT INTO Users(id, firstname, lastname, password, telephone, email, date_joined) 
+          VALUES (1, 'Robin', 'Doe', md5('Password123'), '876-372-5829','admin@hireme.com', '03/12/2018');                       
 
 CREATE TABLE Jobs (
  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,

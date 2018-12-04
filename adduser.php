@@ -14,10 +14,10 @@ catch(PDOException $e){
   echo $e;
 }
 
-$adminPassword = password_filter('password123');
+/*$adminPassword = password_filter('password123');
 $adminPassword = mysql_real_escape_string($adminPassword);
 $adminDate = date_filter();
-$adminDate = mysql_real_escape_string($adminDate);
+$adminDate = mysql_real_escape_string($adminDate);*/
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -31,12 +31,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = email_filter($_POST["email"]);
     $date_joined = date_filter();
     
-    //$hash_pword = md5($pword);
+    $adminPassword = password_filter('password123');
+    
+    $query = "INSERT INTO Users (`firstname`, `lastname`, `password`, `telephone`, `email`, `date_joined`) VALUES('Job', 'Dickenson', '$adminPassword',
+    '876-555-5555', 'admin@hireme.com', '$date_joined')";
+    
+    $conn->exec($query);
     
     // returns true if all of variables are set and returns false if any of the values are null
     if(isset($fname) && isset($lname) && isset($pword) && ($tphone) && ($email) && ($date_joined)){ 
         $sql = 'INSERT INTO `Users`(firstname, lastname, password, telephone, email, date_joined) VALUES("' . $fname  .'","' .$lname .'","' . $pword .'",
-        "' . $tphone .'","' . $email .'","' . $date_joined .'");'; 
+        "' . $tphone .'","' . $email .'","' . $date_joined .'");';
+        
         $conn->exec($sql);
         echo 'User added';
     }
@@ -66,6 +72,7 @@ function email_filter($email) {
 function date_filter() {
     date_default_timezone_set('America/Jamaica');
     $date = date('d/m/Y');
+    //$date = date('Y/m/d');
     
     //$date = "01/02/0000";
     /*$date = date_parse($name); // or date_parse_from_format("dd/mm/YYYY", $date);
@@ -98,7 +105,7 @@ function password_filter($name) {
             return null;
     } else {
         //return name_filter($name);
-        //$hash_pword = md5($pword);
+        //$hash_pword = md5($name);
         
         $hash_pword = password_hash($name, PASSWORD_BCRYPT);
         return $hash_pword;
