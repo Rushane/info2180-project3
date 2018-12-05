@@ -1,10 +1,63 @@
-<DOCTYPE html>
-    <title>Home</title>
-    <head>
-        
-    </head>
-    <body>
-        
-        
-    </body>
-    
+<!DOCTYPE html>
+    <html>
+        <title>Hire Me Form</title>
+
+        <head> 
+            <link rel='stylesheet' type='text/css' href='styles/style2.css'> 
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        </head>
+  
+        <body>
+            <div class="grid">
+                <div id ="hire"><h1>New Jobs</h1></div>
+
+                <div id="menu-area">
+                    <div class="w3-container">
+                        <ul class="w3-ul">
+                            <li><button type="button" class="btn btn-default btn-sm" onclick=""><a href="dashboard.html"><i class="fa fa-home"></i>Home</a></button></li>  
+                            <li><button type="button" class="btn btn-default btn-sm" onclick=""><a href="adduser.html"><i class="fa fa-user-plus"></i>Add User</a></button></li>
+                            <li><button type="button" class="btn btn-default btn-sm" onclick=""><a href="newjob.html"><i class="material-icons">domain</i>New Job</a></button></li>
+                            <li><button type="button" class="btn btn-default btn-sm" onclick=""><a href="login.html"><span class="glyphicon glyphicon-log-out"></span>Logout</a></button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="dashboard">Dashboard</div>
+                <button type="submit" name="postJob" id="postJob">Post a Job</button>
+                <div id="availableJobs">Available Jobs</div>
+                    <?php include 'header.php'; ?>
+                    <div>
+                        <label for="company" class="company">Company</label>
+                       <!-- <br/> --> 
+
+                        <label for="jobTitle" class="jobTitle">Job Title</label>
+                        <!-- <br/> --> 
+ 
+                        <label for="category" class="category">Category</label>
+                        <!-- <br/> --> 
+                  
+                        <label for="date" class="date">Date</label>
+                        <!-- <br/> --> 
+                    </div>  
+                    <div id="jobsApplied">Jobs Applied For</div>
+                    
+                    <div>
+                        <label for="company">Company</label>
+                        <!-- <br/> --> 
+
+                        <label for="jobTitle">Job Title</label>
+                       <!-- <br/> --> 
+                       
+                        <label for="category">Category</label>
+                         <!-- <br/> --> 
+                  
+                        <label for="date">Date Applied</label>
+                         <!-- <br/> --> 
+                    </div>              
+                
+            </div>
+        </body>
+    </html>
