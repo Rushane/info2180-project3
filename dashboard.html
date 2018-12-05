@@ -28,8 +28,10 @@
                 <div id="dashboard">Dashboard</div>
                 <button type="submit" name="postJob" id="postJob">Post a Job</button>
                 <div id="availableJobs">Available Jobs</div>
-                    <?php include 'header.php'; ?>
-                    <div>
+                    <?php include 'displayjob.php'; ?>
+                    <div id="availablecontent"> <!--added id CD -->
+                         <?while ($row = mysqli_fetch_array($query)) ?> <!-- This should have printed the query from displayjob.php. 
+                        Not by itself, but with row["company_name"], row["company_location"] etc. -->
                         <label for="company" class="company">Company</label>
                        <!-- <br/> --> 
 
@@ -41,10 +43,11 @@
                   
                         <label for="date" class="date">Date</label>
                         <!-- <br/> --> 
+                        
                     </div>  
                     <div id="jobsApplied">Jobs Applied For</div>
                     
-                    <div>
+                    <div id="appliedcontent"> <!--added id CD -->
                         <label for="company">Company</label>
                         <!-- <br/> --> 
 

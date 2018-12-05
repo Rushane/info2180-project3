@@ -86,3 +86,10 @@
 .tele .jlocation {
   grid-area: 7 / 2 / span 1 / span 2;
 }
+
+.enter{
+  font-family: courier;
+  font-size: 20px;
+  font-weight: bold;
+  padding:10px;
+}

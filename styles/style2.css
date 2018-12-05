@@ -30,7 +30,10 @@
 }
 
 #dashboard {
-    grid-area: 2 / 2 / span 1 / span 1;  
+    grid-area: 2 / 2 / span 1 / span 3; 
+    font-family: courier;
+    font-weight: bold;
+    font-size: 40px;
 }
 
 #postJob {
@@ -69,3 +72,18 @@
 .date {
     grid-area: 4 / 4 / span 1 / span 1;
 }
+
+#availablecontent{
+  grid-area: 4 / 2 / span 1 / span 3;
+}
+
+#appliedcontent{
+   grid-area: 6 / 2 / span 1 / span 3;
+}
+
+label{
+ padding-left: 20px;
+  padding-right: 180px;
+}
+
+
